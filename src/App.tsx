@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { db } from './db'
 import { Onboarding } from './Onboarding'
 import { CrisisResources } from './CrisisResources'
+import { Chat } from './Chat'
 
 export default function App() {
   const [key, setKey] = useState<CryptoKey | null>(null)
@@ -19,6 +20,7 @@ export default function App() {
   return (
     <main>
       <h1>Sponsor</h1>
+      <Chat />
       <CrisisResources />
     </main>
   )
