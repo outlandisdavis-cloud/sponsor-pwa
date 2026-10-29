@@ -3,6 +3,7 @@ import { db } from './db'
 import { Onboarding } from './Onboarding'
 import { CrisisResources } from './CrisisResources'
 import { Chat } from './Chat'
+import { MoodTracker } from './MoodTracker'
 
 export default function App() {
   const [key, setKey] = useState<CryptoKey | null>(null)
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <main>
       <h1>Sponsor</h1>
+      <MoodTracker />
       <Chat />
       <CrisisResources />
     </main>
