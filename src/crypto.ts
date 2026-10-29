@@ -26,7 +26,7 @@ export async function encrypt(key: CryptoKey, plaintext: string): Promise<{ iv: 
 }
 
 export async function decrypt(key: CryptoKey, iv: Uint8Array, ct: ArrayBuffer): Promise<string> {
-  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ct)
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: iv as unknown as BufferSource }, key, ct)
   return new TextDecoder().decode(pt)
 }
 
