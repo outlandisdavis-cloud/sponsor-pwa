@@ -28,7 +28,7 @@ export function Onboarding({ onReady }: Props) {
       await db.settings.put({ key: SETTINGS_SALT, value: toBase64(salt) })
       await db.settings.put({ key: SETTINGS_VERIFIER, value: toBase64(enc) })
       onReady(key)
-    } catch (err) {
+    } catch {
       setError('Failed to initialize secure storage.')
     } finally {
       setBusy(false)
